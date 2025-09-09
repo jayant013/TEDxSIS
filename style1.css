@@ -15,39 +15,115 @@ body {
 /* Header Logo */
 .header {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .logo {
   width: 180px;
 }
 
-/* Navbar */
+/* Navbar container */
 .navbar {
-  text-align: center;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  border-bottom: 2px solid #cc0000; /* thin white strip */
+  display: flex;
+  justify-content: space-between; /* logo left, links right */
+  align-items: center;
+  background: #111;       /* solid dark background */
+  padding: 12px 40px;     /* top-bottom + left-right */
+  margin: 0;
+  border-bottom: 2px solid #cc0000;
+  height: 60px;       /* lock navbar height */
+  padding: 0 20px;    /* horizontal padding only */
+  position: fixed;      /* fixes it to the viewport */
+  top: 0;               /* stick to very top */
+  left: 0;
+  width: 100%;          /* span full width */
+  z-index: 1000;        /* keeps it above other elements */
+  background: #111;     /* solid background so content doesn’t overlap */
+  padding: 12px 40px;   /* adjust padding as needed */
 }
+
+/* Logo */
+.navbar img {
+  height: 40px;          /* adjust size as needed */
+  display: block;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+/* Menu */
 .navbar ul {
   list-style: none;
+  display: flex;
+  gap: 30px;   /* space between links */
+  margin: 0;
   padding: 0;
 }
+
+/* Menu Items */
 .navbar ul li {
-  display: inline-block;
-  margin: 0 20px;
+  position: relative; /* for dropdown positioning */
 }
+
 .navbar ul li a {
   text-decoration: none;
-  color: #ffffff;
+  color: #fff;
   font-size: 14px;
   font-weight: 300;
   letter-spacing: 2px;
   text-transform: uppercase;
   transition: color 0.3s;
 }
+
 .navbar ul li a:hover {
   color: #e62b1e;
 }
+
+/* Dropdown */
+.navbar ul li .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #111;
+  border-radius: 6px;
+  padding: 10px 0;
+  min-width: 180px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  z-index: 999;
+}
+
+.navbar ul li:hover .dropdown-menu {
+  display: block;
+}
+
+.navbar ul li .dropdown-menu a {
+  display: block;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: #fff;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar ul li .dropdown-menu a:hover {
+  background: #e62b1e;
+  color: #fff;
+}
+
+.navbar img {
+  height: 70px;       /* make logo bigger */
+  width: auto;        /* keep proportions */
+}
+.navbar ul li a.active {
+  color: #e62b1e;        /* TEDx red */
+  font-weight: 600;      /* bolder */
+  border-bottom: 2px solid #e62b1e; /* underline effect */
+}
+
+
+
+
 
 /* Hero Section */
 .hero {
@@ -597,4 +673,554 @@ body {
 .socials a:hover {
   background: #e62b1e;
   color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------- Events Page Styles ---------- */
+
+/* Hero Section for Events */
+.events-hero {
+  height: 70vh; /* smaller than homepage hero */
+  background: url('stock1.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.events-hero .hero-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.events-hero h1 {
+  font-size: 48px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.events-hero p {
+  font-size: 20px;
+  color: #ccc;
+}
+
+/* Upcoming Event Section */
+.upcoming-event {
+  padding: 80px 50px;
+  background: #111;
+  color: #fff;
+  text-align: center;
+}
+
+.upcoming-event h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #e62b1e;
+}
+
+.event-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+}
+
+.event-card img {
+  width: 50%;
+  object-fit: cover;
+}
+
+.event-info {
+  padding: 30px;
+  text-align: left;
+}
+
+.event-info h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.event-info p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.event-info .btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #e62b1e;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background 0.3s;
+}
+
+.event-info .btn:hover {
+  background: #b51f15;
+}
+
+/* Past Events Section */
+.past-events {
+  padding: 80px 50px;
+  background: #1111;
+  color: #fff;
+  text-align: center;
+}
+
+.past-events h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #e62b1e;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.past-card {
+  background: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: transform 0.3s;
+}
+
+.past-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.past-card p {
+  padding: 15px;
+  font-size: 16px;
+}
+
+.past-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Watermark background for Upcoming Events */
+.upcoming-event {
+  position: relative;
+  padding: 200px 40px;
+  text-align: center;
+  background: #1111;
+  color: #fff;
+  overflow: hidden;
+}
+
+.upcoming-event::before {
+  content: "TEDxSIS";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-5deg);
+  font-size: 600px;
+  font-weight: 900;              /* thicker */
+  letter-spacing: 20px;          /* spaced out */
+  font-family: "Impact", sans-serif; /* bold blocky font */
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.08); /* outline only */
+  opacity: 0.2;
+  pointer-events: none;          /* so it won’t block clicks */
+  z-index: 0;
+}
+
+
+.upcoming-event h2,
+.event-card {
+  position: relative;
+  z-index: 1; /* keep content above watermark */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Speaker Hero Section */
+.speaker_hero {
+  background: url("speakers1.png") center/cover no-repeat;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.speaker_hero_text {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 20px 40px;
+  border-radius: 10px;
+}
+
+/* Speakers Section */
+.speaker_section {
+  padding: 80px 40px;
+  background: #000;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.speaker_section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #fcfcfc;
+}
+
+.speaker_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.speaker_card {
+  background: #111;
+  border-radius: 15px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.speaker_card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.speaker_card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+
+.speaker_card p {
+  font-size: 1rem;
+  color: #aaa;
+}
+
+.speaker_card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* About Hero Section */
+.about_hero {
+  background: url("images/about-bg.jpg") center/cover no-repeat;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.about_hero_text {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 20px 40px;
+  border-radius: 10px;
+}
+
+/* About Content */
+.about_section {
+  background: #000;
+  color: white;
+  padding: 80px 40px;
+}
+
+.about_container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+}
+
+.about_left {
+  flex: 1;
+}
+
+.about_left h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #e62b1e;
+}
+
+.about_left p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #ddd;
+}
+
+.about_right {
+  flex: 1;
+  text-align: center;
+}
+
+.about_right img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+
+/* Team / Volunteers Section */
+.about_team {
+  background: #111;
+  color: white;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.about_team h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #e62b1e;
+}
+
+.team_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.team_card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team_card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+.team_card h3 {
+  font-size: 1.2rem;
+  margin: 10px 0 5px;
+  color: #fff;
+}
+
+.team_card p {
+  font-size: 1rem;
+  color: #bbb;
+}
+
+/* Hover Effect */
+.team_card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.6);
 }
