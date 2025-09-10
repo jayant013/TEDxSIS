@@ -10,6 +10,7 @@ Session(app)
 @app.route("/")
 def index():
   ...
+  return render_template("index.html")
   
 #login and register
   
@@ -25,3 +26,4 @@ def index():
   
 #tickets tab
   #Display Hash Key/QR Code according to db
+
