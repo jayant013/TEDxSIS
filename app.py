@@ -1,6 +1,27 @@
+import flask
+
+app = Flask(__name__)
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
+
+Session(app)
+
+#index.html
+@app.route("/")
+def index():
+  ...
+  
 #login and register
+  
 #gforms integration
-#while loop check index
-#close regis when 100reg (idt this is necessary ~ j)
-#speaker eegister section
-#event page uses db tables and inputoutput
+  #1st stage: details
+  #2nd stage: further details (video/essay/etc)
+  
+#speakers tab
+  #speakers list
+  #speakers registrations
+  #nominate a speaker
+  #validating whether they've finished all stages or not
+  
+#tickets tab
+  #Display Hash Key/QR Code according to db
