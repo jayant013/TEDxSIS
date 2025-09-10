@@ -12,18 +12,12 @@ def index():
   ...
   return render_template("index.html")
   
-#login and register
-  
-#gforms integration
-  #1st stage: details
-  #2nd stage: further details (video/essay/etc)
-  
-#speakers tab
+#register tab
+  #gforms integration
+    #1st stage: details
+    #2nd stage: further details (video/essay/etc)
   #speakers list
-  #speakers registrations
-  #nominate a speaker
   #validating whether they've finished all stages or not
   
 #tickets tab
   #Display Hash Key/QR Code according to db
-
