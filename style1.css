@@ -17,6 +17,7 @@ body {
   text-align: center;
   margin-top: 10px;
 }
+
 .logo {
   width: 180px;
 }
@@ -115,6 +116,7 @@ body {
   height: 70px;       /* make logo bigger */
   width: auto;        /* keep proportions */
 }
+
 .navbar ul li a.active {
   color: #e62b1e;        /* TEDx red */
   font-weight: 600;      /* bolder */
@@ -137,8 +139,6 @@ body {
   overflow: hidden;
   background-attachment: fixed; /* makes it scroll nicely */
 }
-
-
 
 .hero::before {
   content: "";
@@ -178,6 +178,8 @@ body {
 
 
 
+
+
 /* Decorative Group */
 .decor-group {
   position: absolute;
@@ -200,32 +202,40 @@ body {
 }
 
 
+
+
+
 /* About Section */
 .about {
   padding: 80px 50px;
   background: #1111;
   color: #fff;
 }
+
 .about-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 40px;
 }
+
 .images {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
+
 .images img {
   width: 100%;
   border-radius: 10px;
 }
+
 .text-overlay {
   flex: 1;
   position: relative;
 }
+
 .text-overlay .overlay {
   position: absolute;
   top: 0;
@@ -236,20 +246,22 @@ body {
   border-radius: 10px;
   z-index: 1;
 }
+
 .text-box {
   position: relative;
   z-index: 2;
   padding: 30px;
 }
+
 .text-box h2 {
   font-size: 22px;
   margin-bottom: 15px;
 }
+
 .text-box p {
   font-size: 15px;
   line-height: 1.6;
 }
-
 
 .test-section {
   height: 100vh;         
@@ -288,7 +300,6 @@ body {
   background-color: #b71c1c; /* darker red */
 }
 
-
 .about-tedx {
   background: #111;      /* dark background */
   color: #fff;           /* default white text */
@@ -314,6 +325,10 @@ body {
   max-width: 900px;
   margin: 0 auto;
 }
+
+
+
+
 
 /* Special colors for spans */
 .about-tedx .red {
@@ -450,12 +465,20 @@ body {
   color: #ddd;
 }
 
+
+
+
+
 /* Responsive: 2 columns on tablets */
 @media (max-width: 900px) {
   .features {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+
+
+
 
 /* Responsive: stack vertically on mobile */
 @media (max-width: 600px) {
@@ -481,8 +504,6 @@ body {
   left: -100px;   
   top: 95px;
 }
-
-
 
 .cta {
   text-align: center;
@@ -525,7 +546,6 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
 
 .red-btn {
   background: #e62b1e;
@@ -695,49 +715,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ---------- Events Page Styles ---------- */
 
 /* Hero Section for Events */
@@ -767,6 +744,10 @@ body {
   font-size: 20px;
   color: #ccc;
 }
+
+
+
+
 
 /* Upcoming Event Section */
 .upcoming-event {
@@ -831,6 +812,10 @@ body {
   background: #b51f15;
 }
 
+
+
+
+
 /* Past Events Section */
 .past-events {
   padding: 80px 50px;
@@ -874,6 +859,10 @@ body {
   transform: translateY(-6px);
 }
 
+
+
+
+
 /* Watermark background for Upcoming Events */
 .upcoming-event {
   position: relative;
@@ -901,65 +890,11 @@ body {
   z-index: 0;
 }
 
-
 .upcoming-event h2,
 .event-card {
   position: relative;
   z-index: 1; /* keep content above watermark */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1000,6 +935,10 @@ body {
   padding: 20px 40px;
   border-radius: 10px;
 }
+
+
+
+
 
 /* Speakers Section */
 .speaker_section {
@@ -1072,46 +1011,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* About Hero Section */
 .about_hero {
   background: url("images/about-bg.jpg") center/cover no-repeat;
@@ -1129,6 +1028,10 @@ body {
   padding: 20px 40px;
   border-radius: 10px;
 }
+
+
+
+
 
 /* About Content */
 .about_section {
@@ -1172,6 +1075,9 @@ body {
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
+
+
+
 
 
 /* Team / Volunteers Section */
@@ -1218,6 +1124,10 @@ body {
   font-size: 1rem;
   color: #bbb;
 }
+
+
+
+
 
 /* Hover Effect */
 .team_card:hover {
