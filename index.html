@@ -13,6 +13,17 @@
   </head>
 
 
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="flash-messages">
+        {% for category, message in messages %}
+          <p class="{{ category }}">{{ message }}</p>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+
   <body>
     <!-- Logo -->
     <header class="header">
@@ -204,8 +215,8 @@
       <div class="newsletter">
         <h4>Subscribe to our newsletter</h4>
 
-        <form>
-          <input type="email" placeholder="Enter your email" required>
+        <form action="/subscribe" method="POST">
+          <input type="email" name="email" placeholder="Enter your email" required>
           <button type="submit">
             <i class="fas fa-envelope"></i>
           </button>
