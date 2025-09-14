@@ -4,20 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TEDxSIS</title>
-  <link rel="stylesheet" href="style1.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
   <link href="https://fonts.googleapis.com/css2?family=Helvetica:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
 <nav class="navbar">
   <!-- Logo on left -->
-  <img src="logoted3.png" alt="TEDx Logo">
+  <img src="{{ url_for('static', filename='logoted3.png') }}" alt="TEDx Logo">
 
   <!-- Menu on right -->
   <ul>
-    <li><a href="index1.html">Home</a></li>
+    <li><a href="{{ url_for('index') }}">Home</a></li>
     <li>
       <a href="#">JOIN US ▼</a>
       <div class="dropdown-menu">
@@ -26,88 +27,59 @@
         <a href="#">Volunteer</a>
       </div>
     </li>
-    <li><a href="event1.html" class="active">Events</a></li>
+    <li><a href="{{ url_for('events') }}" class="active">Events</a></li>
     <li><a href="#">SPEAKERS ▼</a></li>
-    <li><a href="#">ABOUT ▼</a></li>
+    <li><a href="{{ url_for('about') }}">ABOUT ▼</a></li>
     <li><a href="#">TICKETS ▼</a></li>
   </ul>
 </nav>
 
-
-
-
 <!-- Hero Section -->
-  <section class="hero events-hero">
-    <div class="hero-overlay">
-      <h1>Our Events</h1>
-      <p>Discover past talks and upcoming experiences</p>
+<section class="hero events-hero">
+  <div class="hero-overlay">
+    <h1>Our Events</h1>
+    <p>Discover past talks and upcoming experiences</p>
+  </div>
+</section>
+
+<!-- Upcoming Event -->
+<section class="upcoming-event">
+  <h2>Upcoming Event</h2>
+  <div class="event-card">
+    <img src="{{ url_for('static', filename='stock1.jpg') }}" alt="Upcoming Event">
+    <div class="event-info">
+      <h3>TEDxSIS 2025</h3>
+      <p><strong>Date:</strong> October 10, 2025</p>
+      <p><strong>Location:</strong> Singapore Intercultural School, Surabaya</p>
+      <p>A day filled with inspiring talks and groundbreaking ideas.</p>
+      <a href="#" class="btn">Get Tickets</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Upcoming Event -->
-  <section class="upcoming-event">
-    <h2>Upcoming Event</h2>
-    <div class="event-card">
-      <img src="stock1.jpg" alt="Upcoming Event">
-      <div class="event-info">
-        <h3>TEDxSIS 2025</h3>
-        <p><strong>Date:</strong> October 10, 2025</p>
-        <p><strong>Location:</strong> Singapore Intercultural School, Surabaya</p>
-        <p>A day filled with inspiring talks and groundbreaking ideas.</p>
-        <a href="#" class="btn">Get Tickets</a>
-      </div>
+<!-- Past Events -->
+<section class="past-events">
+  <h2>Past Events</h2>
+  <div class="events-grid">
+    <div class="past-card">
+      <img src="{{ url_for('static', filename='stock2.jpg') }}" alt="Past Event">
+      <p>TEDxSIS 2024</p>
     </div>
-  </section>
-
-  <!-- Past Events -->
-  <section class="past-events">
-    <h2>Past Events</h2>
-    <div class="events-grid">
-      <div class="past-card">
-        <img src="stock2.jpg" alt="Past Event">
-        <p>TEDxSIS 2024</p>
-      </div>
-      <div class="past-card">
-        <img src="stock1.jpg" alt="Past Event">
-        <p>TEDxSIS 2023</p>
-      </div>
-      <div class="past-card">
-        <img src="stock2.jpg" alt="Past Event">
-        <p>TEDxSIS 2022</p>
-      </div>
+    <div class="past-card">
+      <img src="{{ url_for('static', filename='stock1.jpg') }}" alt="Past Event">
+      <p>TEDxSIS 2023</p>
     </div>
-  </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <div class="past-card">
+      <img src="{{ url_for('static', filename='stock2.jpg') }}" alt="Past Event">
+      <p>TEDxSIS 2022</p>
+    </div>
+  </div>
+</section>
 
 <footer class="footer">
   <div class="footer-top">
     <div class="footer-logo">
-      <img src="logoted3.png" alt="TEDxSIS Logo">
+      <img src="{{ url_for('static', filename='logoted3.png') }}" alt="TEDxSIS Logo">
       <p>This independent TEDx event is operated<br> under license from TED.</p>
     </div>
 
@@ -141,8 +113,8 @@
 
   <div class="newsletter">
     <h4>Subscribe to our newsletter</h4>
-    <form>
-      <input type="email" placeholder="Enter your email" required>
+    <form action="{{ url_for('subscribe') }}" method="POST">
+      <input type="email" name="email" placeholder="Enter your email" required>
       <button type="submit"><i class="fas fa-envelope"></i></button>
     </form>
     <p>Get the latest news and updates</p>
@@ -160,8 +132,6 @@
     <p>© TEDxSIS 2025 — All rights reserved</p>
   </div>
 </footer>
-
-
 
 </body>
 </html>
