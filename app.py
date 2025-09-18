@@ -12,19 +12,17 @@ Session(app)
 @app.route("/")
 def index():
     ...
-    return render_template("index.html")
+    return render_template("index1.html")
 
 #Newsletter subscription
 @app.route("/subscribe", methods=["POST"])
 def subscribe():
     email = request.form.get("email")
     if not email:
-        flash("Please enter a valid email address.", "error")
         return redirect(url_for("index"))
 
     #Save email to database or mailing list service
     ...
-    flash(f"Thanks for subscribing, {email}!", "success")
     return redirect(url_for("index"))
 
 #About page
@@ -44,3 +42,24 @@ def events():
 def speakers():
     ...
     return render_template("speakers.html")
+
+
+
+
+  
+#register tab
+  #gforms integration
+    #1st stage: details
+    #2nd stage: further details (video/essay/etc)
+  #speakers list
+  #validating whether they've finished all stages or not
+  
+#tickets tab
+  #Display Hash Key/QR Code according to db
+
+
+
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
