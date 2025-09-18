@@ -29,7 +29,7 @@
       <!-- Menu on right -->
       <ul>
         <li>
-          <a href="index1.html" class="active">Home</a>
+          <a href="{{ url_for('index') }}" class="active">Home</a>
         </li>
         <li>
           <a href="#">JOIN US ▼</a>
@@ -39,10 +39,10 @@
             <a href="#">Volunteer</a>
           </div>
         </li>
-        <li><a href="events.html">EVENTS ▼</a></li>
-        <li><a href="speakers.html">SPEAKERS ▼</a></li>
-        <li><a href="#">ABOUT ▼</a></li>
-        <li><a href="#">TICKETS ▼</a></li>
+  <li><a href="{{ url_for('events') }}">EVENTS ▼</a></li>
+  <li><a href="{{ url_for('speakers') }}">SPEAKERS ▼</a></li>
+  <li><a href="{{ url_for('about') }}">ABOUT ▼</a></li>
+  <li><a href="#">TICKETS ▼</a></li>
       </ul>
     </nav>
 
@@ -250,8 +250,8 @@
 
       <div class="newsletter">
         <h4>Subscribe to our newsletter</h4>
-        <form>
-          <input type="email" placeholder="Enter your email" required>
+        <form action="{{ url_for('subscribe') }}" method="POST">
+          <input type="email" placeholder="Enter your email" required name="email">
           <button type="submit">
             <i class="fas fa-envelope"></i>
           </button>
